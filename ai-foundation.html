@@ -105,9 +105,19 @@
     }
 
     nav.scrolled {
-      background: rgba(255, 255, 255, .85);
+      background: rgba(255, 255, 255, .95);
+      -webkit-backdrop-filter: blur(20px);
       backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--line)
+      border-bottom: 1px solid var(--line);
+    }
+
+    nav .bar {
+      min-height: 60px;
+    }
+
+    nav.scrolled .bar {
+      min-height: 56px;
+      padding: 8px 40px;
     }
 
     nav.scrolled .bar {
@@ -147,6 +157,10 @@
       color: inherit
     }
 
+    nav.hero-mode .brand {
+      color: #fff
+    }
+
     .nav-r {
       display: flex;
       align-items: center;
@@ -162,8 +176,16 @@
       transition: all .25s
     }
 
+    nav.hero-mode .nav-r a {
+      color: rgba(255, 255, 255, .85)
+    }
+
     .nav-r a:hover {
       background: var(--fog)
+    }
+
+    nav.hero-mode .nav-r a:hover {
+      background: rgba(255, 255, 255, .12)
     }
 
     .nav-r .start {
@@ -177,6 +199,15 @@
       background: var(--indigo-2) !important
     }
 
+    nav.hero-mode .nav-r .start {
+      background: #fff;
+      color: var(--indigo) !important
+    }
+
+    nav.hero-mode .nav-r .start:hover {
+      background: rgba(255, 255, 255, .9) !important
+    }
+
     .nav-r .login {
       border: 1px solid var(--line-2);
       color: var(--ink-2);
@@ -187,6 +218,16 @@
     .nav-r .login:hover {
       background: var(--fog);
       border-color: var(--indigo)
+    }
+
+    nav.hero-mode .nav-r .login {
+      border-color: rgba(255, 255, 255, .45);
+      color: #fff
+    }
+
+    nav.hero-mode .nav-r .login:hover {
+      background: rgba(255, 255, 255, .14);
+      border-color: rgba(255, 255, 255, .7)
     }
 
     /* ===== ARTICLE HERO ===== */
@@ -1011,8 +1052,7 @@
       if (!nav) return
       const hero = document.querySelector('.phero, .hero')
       function navState() {
-        const trigger = hero ? hero.offsetHeight - 80 : 40
-        const solid = window.scrollY > trigger
+        const solid = window.scrollY > 30
         nav.classList.toggle('scrolled', solid)
         nav.classList.toggle('hero-mode', !solid)
       }
