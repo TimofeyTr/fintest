@@ -32,6 +32,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&display=swap"
     rel="stylesheet">
+
   <style>
     * {
       margin: 0;
@@ -144,6 +145,24 @@
       text-decoration: none;
       display: flex;
       align-items: center;
+      gap: 9px;
+      line-height: 1
+    }
+
+    .brand-mark {
+      height: 28px;
+      width: auto;
+      display: block;
+      color: inherit;
+      flex-shrink: 0
+    }
+
+    .brand-word {
+      font-family: var(--sans);
+      font-weight: 800;
+      font-size: 22px;
+      letter-spacing: .4px;
+      color: inherit;
       line-height: 1
     }
 
@@ -1086,8 +1105,18 @@
 
     .foot-brand .brand {
       color: var(--indigo);
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
       margin-bottom: 16px
+    }
+
+    .foot-brand .brand-mark {
+      height: 34px
+    }
+
+    .foot-brand .brand-word {
+      font-size: 23px
     }
 
     .foot-logo {
@@ -2491,22 +2520,21 @@
   <nav id="nav" class="scrolled">
     <div class="bar">
       <a href="index.html" class="brand" aria-label="Finvise — the new generation valuation firm">
-        <svg class="brand-logo" viewBox="0 0 334 96" role="img" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="48" cy="48" r="34" fill="none" stroke="currentColor" stroke-width="1.6" />
-          <text x="48" y="62" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-weight="400"
-            font-size="40" fill="currentColor">F</text>
-          <text x="98" y="44" font-family="Georgia,'Times New Roman',serif" font-weight="400" font-size="31"
-            letter-spacing="1.5" fill="currentColor">FINVISE</text>
-          <line x1="99" y1="56" x2="276" y2="56" stroke="currentColor" stroke-opacity="0.28" stroke-width="0.6" />
-          <text x="99" y="70" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="400" font-size="7.5"
-            letter-spacing="2.4" fill="currentColor" opacity="0.62">THE NEW GENERATION VALUATION FIRM</text>
-        </svg>
+        <svg class="brand-mark" viewBox="0 0 512 512" role="img" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+          <g transform="translate(0,512) scale(0.1,-0.1)" fill="currentColor" stroke="none">
+            <path
+              d="M760 5113 c-136 -14 -281 -66 -390 -138 -84 -56 -198 -176 -250 -264 -48 -82 -95 -221 -109 -324 -8 -53 -11 -647 -11 -1846 0 -1545 2 -1780 15 -1856 60 -343 328 -610 671 -670 131 -23 3618 -23 3749 0 344 60 610 326 670 670 13 76 15 321 15 1875 0 1967 3 1880 -61 2039 -97 242 -295 417 -559 494 l-75 22 -1815 1 c-998 1 -1831 -1 -1850 -3z m3834 -1030 c-81 -159 -152 -293 -158 -300 -17 -19 -3684 -20 -3701 -1 -11 12 -345 561 -353 580 -2 4 978 8 2178 8 l2181 0 -147 -287z m-2435 -1590 c223 -392 408 -713 411 -713 3 0 109 189 237 420 l231 420 -264 0 -264 0 2 293 3 292 777 0 c428 0 778 -3 778 -7 0 -4 -313 -557 -696 -1228 l-697 -1221 -110 3 -110 3 -549 950 c-302 523 -619 1070 -704 1217 -85 147 -154 272 -154 278 0 7 115 9 352 8 l351 -3 406 -712z" />
+          </g>
+        </svg><span class="brand-word">FINVISE</span>
       </a>
       <div class="nav-r">
         <a href="cases.html">Cases</a>
-        <a href="about.html">About</a>
+        <a href="about.html">About us</a>
         <a href="contact.html">Contact</a>
-        <a href="#" class="login">Login</a>
+        <a target="_blank" rel="noopener noreferrer"
+          href="https://outlook.office.com/book/FINVISEMeetingHub@finvise.com/s/BhD4l-hmk0Kio8RT5LA6Bg2?ismsaljsauthenabled"
+          class="login">Login</a>
+
         <a href="contact.html" class="start">Get started</a>
       </div>
       <button class="nav-burger" id="navBurger" type="button" aria-label="Open menu" aria-expanded="false"
@@ -2520,11 +2548,14 @@
   <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
     <nav class="mm-links" aria-label="Mobile navigation">
       <a href="cases.html">Cases</a>
-      <a href="about.html">About</a>
+      <a href="about.html">About us</a>
       <a href="contact.html">Contact</a>
     </nav>
     <div class="mm-actions">
-      <a href="#" class="login">Login</a>
+      <a target="_blank" rel="noopener noreferrer"
+        href="https://outlook.office.com/book/FINVISEMeetingHub@finvise.com/s/BhD4l-hmk0Kio8RT5LA6Bg2?ismsaljsauthenabled"
+        class="login">Login</a>
+
       <a href="contact.html" class="start">Get started</a>
     </div>
   </div>
@@ -2580,17 +2611,13 @@
       <div class="foot-grid">
         <div class="foot-brand">
           <a href="index.html" class="brand foot-logo" aria-label="Finvise — the new generation valuation firm">
-            <svg viewBox="0 0 334 96" role="img" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-              style="height:46px;width:auto;display:block">
-              <circle cx="48" cy="48" r="34" fill="none" stroke="currentColor" stroke-width="1.6" />
-              <text x="48" y="62" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-weight="400"
-                font-size="40" fill="currentColor">F</text>
-              <text x="98" y="44" font-family="Georgia,'Times New Roman',serif" font-weight="400" font-size="31"
-                letter-spacing="1.5" fill="currentColor">FINVISE</text>
-              <line x1="99" y1="56" x2="276" y2="56" stroke="currentColor" stroke-opacity="0.25" stroke-width="0.6" />
-              <text x="99" y="70" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="400" font-size="7.5"
-                letter-spacing="2.4" fill="currentColor" opacity="0.6">THE NEW GENERATION VALUATION FIRM</text>
-            </svg>
+            <svg class="brand-mark" viewBox="0 0 512 512" role="img" aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg">
+              <g transform="translate(0,512) scale(0.1,-0.1)" fill="currentColor" stroke="none">
+                <path
+                  d="M760 5113 c-136 -14 -281 -66 -390 -138 -84 -56 -198 -176 -250 -264 -48 -82 -95 -221 -109 -324 -8 -53 -11 -647 -11 -1846 0 -1545 2 -1780 15 -1856 60 -343 328 -610 671 -670 131 -23 3618 -23 3749 0 344 60 610 326 670 670 13 76 15 321 15 1875 0 1967 3 1880 -61 2039 -97 242 -295 417 -559 494 l-75 22 -1815 1 c-998 1 -1831 -1 -1850 -3z m3834 -1030 c-81 -159 -152 -293 -158 -300 -17 -19 -3684 -20 -3701 -1 -11 12 -345 561 -353 580 -2 4 978 8 2178 8 l2181 0 -147 -287z m-2435 -1590 c223 -392 408 -713 411 -713 3 0 109 189 237 420 l231 420 -264 0 -264 0 2 293 3 292 777 0 c428 0 778 -3 778 -7 0 -4 -313 -557 -696 -1228 l-697 -1221 -110 3 -110 3 -549 950 c-302 523 -619 1070 -704 1217 -85 147 -154 272 -154 278 0 7 115 9 352 8 l351 -3 406 -712z" />
+              </g>
+            </svg><span class="brand-word">FINVISE</span>
           </a>
           <p>The new generation valuation firm. RICS-qualified surveyors powered by proprietary, latest-grade
             technology.</p>
@@ -2613,20 +2640,20 @@
         <div class="foot-col">
           <h5>Legal</h5>
           <a href="about.html#compliance">Compliance</a>
-          <a href="#">Privacy</a>
-          <a href="#">Cookies</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="cookies.html">Cookies</a>
         </div>
       </div>
       <div class="foot-bot">
         <div class="lg">© 2026 Imperium Global Ventures Ltd (T/A FINVISE). Registered in England and Wales, No.
           13498329. VAT GB399 5320 52. 86-90 Paul Street, London EC2A 4NE.</div>
-        <a href="#" class="foot-app">
+        <!-- <a href="#" class="foot-app">
           <svg viewBox="0 0 24 24">
             <path
               d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z" />
           </svg>
           Homeowner? Download the app
-        </a>
+        </a> -->
       </div>
     </div>
   </footer>
@@ -2650,6 +2677,20 @@
     const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches
     const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target) } }), { threshold: .15, rootMargin: '0px 0px -40px 0px' })
     document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+    (function () {
+      const nav = document.getElementById('nav')
+      if (!nav) return
+      const hero = document.querySelector('.phero, .hero')
+      function navState() {
+        const solid = window.scrollY > 30
+        nav.classList.toggle('scrolled', solid)
+        nav.classList.toggle('hero-mode', !solid)
+      }
+      navState()
+      window.addEventListener('scroll', navState, { passive: true })
+      window.addEventListener('resize', navState)
+    })();
   </script>
 </body>
 

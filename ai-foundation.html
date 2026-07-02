@@ -1,363 +1,1026 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="color-scheme" content="light only">
-<meta name="supported-color-schemes" content="light">
-<title>AI Isn't a Tool You Add — It's a Foundation You Build On | FINVISE</title>
-<meta name="description" content="Why bolting AI onto old workflows fails, what an AI-first valuation practice actually means, and how RICS' new standard raises the bar — a perspective from Finvise.">
-<meta name="robots" content="index, follow">
-<meta name="theme-color" content="#0a1059">
-<link rel="canonical" href="https://www.finvise.co.uk/ai-foundation.html">
-<!-- Open Graph -->
-<meta property="og:type" content="article">
-<meta property="og:site_name" content="FINVISE">
-<meta property="og:locale" content="en_GB">
-<meta property="og:title" content="AI Isn't a Tool You Add. It's a Foundation You Build On.">
-<meta property="og:description" content="Why bolting AI onto old workflows fails, what an AI-first valuation practice actually means, and how RICS' new standard raises the bar.">
-<meta property="og:url" content="https://www.finvise.co.uk/ai-foundation.html">
-<meta property="og:image" content="https://www.finvise.co.uk/assets/finvise-og.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="FINVISE — the new generation valuation firm">
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="AI Isn't a Tool You Add. It's a Foundation You Build On.">
-<meta name="twitter:description" content="Why bolting AI onto old workflows fails, and what an AI-first valuation practice actually means.">
-<meta name="twitter:image" content="https://www.finvise.co.uk/assets/finvise-og.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&display=swap" rel="stylesheet">
-<style>*{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --indigo:#0a1059;
-  --indigo-2:#1a2070;
-  --indigo-wash:#f3f3f9;
-  --paper:#ffffff;
-  --fog:#f6f6f4;
-  --fog-2:#eeeeec;
-  --line:#e6e6e2;
-  --line-2:#d8d8d3;
-  --ink:#0e0e10;
-  --ink-2:#3a3a3f;
-  --ink-3:#6e6e76;
-  --ink-4:#9b9ba2;
-  --sans:'Inter',sans-serif;
-  --serif:'Newsreader',serif;
-}
-html{scroll-behavior:smooth;color-scheme:light only;background:#fff}
-body{font-family:var(--sans);color:var(--ink);background:var(--paper)!important;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-::selection{background:var(--indigo);color:#fff}
-.wrap{max-width:1280px;margin:0 auto;padding:0 40px}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light only">
+  <meta name="supported-color-schemes" content="light">
+  <title>AI Isn't a Tool You Add — It's a Foundation You Build On | FINVISE</title>
+  <meta name="description"
+    content="Why bolting AI onto old workflows fails, what an AI-first valuation practice actually means, and how RICS' new standard raises the bar — a perspective from Finvise.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0a1059">
+  <link rel="canonical" href="https://www.finvise.co.uk/ai-foundation.html">
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="FINVISE">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:title" content="AI Isn't a Tool You Add. It's a Foundation You Build On.">
+  <meta property="og:description"
+    content="Why bolting AI onto old workflows fails, what an AI-first valuation practice actually means, and how RICS' new standard raises the bar.">
+  <meta property="og:url" content="https://www.finvise.co.uk/ai-foundation.html">
+  <meta property="og:image" content="https://www.finvise.co.uk/assets/finvise-og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="FINVISE — the new generation valuation firm">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI Isn't a Tool You Add. It's a Foundation You Build On.">
+  <meta name="twitter:description"
+    content="Why bolting AI onto old workflows fails, and what an AI-first valuation practice actually means.">
+  <meta name="twitter:image" content="https://www.finvise.co.uk/assets/finvise-og.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&display=swap"
+    rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
 
-/* ===== NAV ===== */
-nav{position:fixed;top:0;left:0;right:0;z-index:200;transition:all .4s ease}
-nav .bar{max-width:1280px;margin:0 auto;padding:18px 40px;display:flex;align-items:center;justify-content:space-between;transition:padding .4s ease}
-nav.scrolled{background:rgba(255,255,255,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--line)}
-nav.scrolled .bar{padding:13px 40px}
-.brand{color:var(--indigo);text-decoration:none;display:flex;align-items:center;line-height:1}
-.brand-logo{height:46px;width:auto;display:block;color:inherit}
-.nav-r{display:flex;align-items:center;gap:8px}
-.nav-r a{font-size:14px;color:var(--ink-2);text-decoration:none;padding:8px 16px;border-radius:8px;transition:all .25s}
-.nav-r a:hover{background:var(--fog)}
-.nav-r .start{background:var(--indigo);color:#fff!important;font-weight:500;padding:9px 20px}
-.nav-r .start:hover{background:var(--indigo-2)!important}
-.nav-r .login{border:1px solid var(--line-2);color:var(--ink-2);font-weight:500;padding:8px 18px}
-.nav-r .login:hover{background:var(--fog);border-color:var(--indigo)}
+    :root {
+      --indigo: #0a1059;
+      --indigo-2: #1a2070;
+      --indigo-wash: #f3f3f9;
+      --paper: #ffffff;
+      --fog: #f6f6f4;
+      --fog-2: #eeeeec;
+      --line: #e6e6e2;
+      --line-2: #d8d8d3;
+      --ink: #0e0e10;
+      --ink-2: #3a3a3f;
+      --ink-3: #6e6e76;
+      --ink-4: #9b9ba2;
+      --sans: 'Inter', sans-serif;
+      --serif: 'Newsreader', serif;
+    }
 
-/* ===== ARTICLE HERO ===== */
-.phero{background:var(--indigo);color:#fff;padding:180px 0 96px;position:relative;overflow:hidden}
-.phero::after{content:'';position:absolute;top:-120px;right:-80px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.06),transparent 65%)}
-.phero .wrap{position:relative;z-index:1}
-.phero .pk{font-size:13px;font-weight:600;letter-spacing:.5px;color:rgba(255,255,255,.6);margin-bottom:22px;display:flex;align-items:center;gap:12px}
-.phero .pk::before{content:'';width:28px;height:1px;background:rgba(255,255,255,.4)}
-.phero h1{font-family:var(--serif);font-weight:300;font-size:clamp(38px,5.2vw,68px);line-height:1.06;letter-spacing:-.02em;max-width:20ch;margin-bottom:26px}
-.phero h1 em{font-style:italic;color:rgba(255,255,255,.82)}
-.phero .pmeta{font-size:13px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.55)}
-.phero .pk,.phero h1,.phero .pmeta{opacity:0;animation:fu .9s cubic-bezier(.16,1,.3,1) forwards}
-.phero h1{animation-delay:.12s}
-.phero .pmeta{animation-delay:.28s}
-@keyframes fu{to{opacity:1;transform:none}}
+    html {
+      scroll-behavior: smooth;
+      color-scheme: light only;
+      background: #fff
+    }
 
-/* ===== ARTICLE BODY ===== */
-.article{padding:88px 0 8px;background:var(--paper)}
-.article .col{max-width:760px}
-.article .lead{font-family:var(--serif);font-weight:300;font-size:clamp(22px,2.6vw,29px);line-height:1.5;letter-spacing:-.01em;color:var(--ink);margin-bottom:40px;padding-bottom:40px;border-bottom:1px solid var(--line)}
-.article p{font-size:18px;font-weight:300;line-height:1.8;color:var(--ink-2);margin-bottom:24px}
-.article p em{font-style:italic;color:var(--ink)}
-.article .section{margin-top:64px;margin-bottom:6px}
-.article .section-label{display:block;font-size:13px;font-weight:600;letter-spacing:.5px;color:var(--indigo);margin-bottom:14px}
-.article h2{font-family:var(--serif);font-weight:300;font-size:clamp(28px,3.4vw,42px);line-height:1.14;letter-spacing:-.02em;color:var(--ink);margin-bottom:22px}
-.article blockquote{font-family:var(--serif);font-weight:300;font-style:italic;font-size:clamp(23px,2.9vw,31px);line-height:1.4;letter-spacing:-.01em;color:var(--indigo);margin:48px 0;padding:30px 34px;background:var(--indigo-wash);border-left:3px solid var(--indigo);border-radius:0 8px 8px 0}
-.article .byline{margin-top:64px;padding-top:28px;border-top:1px solid var(--line);font-size:15px;font-style:italic;color:var(--ink-3);line-height:1.7}
+    body {
+      font-family: var(--sans);
+      color: var(--ink);
+      background: var(--paper) !important;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden
+    }
 
-/* ===== FINAL CTA ===== */
-.fcta{padding:130px 0;text-align:center;background:var(--fog)}
-.fcta h2{font-family:var(--serif);font-weight:300;font-size:clamp(34px,4.6vw,60px);line-height:1.05;letter-spacing:-.02em;color:var(--ink);max-width:16ch;margin:0 auto 22px}
-.fcta h2 em{font-style:italic;color:var(--indigo)}
-.fcta p{font-size:17px;font-weight:300;color:var(--ink-3);margin-bottom:38px}
-.btn{display:inline-flex;align-items:center;gap:9px;padding:15px 30px;border-radius:10px;font-size:15px;font-weight:500;text-decoration:none;transition:all .3s cubic-bezier(.16,1,.3,1)}
-.fcta .btn-w{background:var(--indigo);color:#fff}
-.fcta .btn-w:hover{background:var(--indigo-2);transform:translateY(-2px);box-shadow:0 14px 36px rgba(10,16,89,.2)}
-.btn .a{transition:transform .3s}.btn:hover .a{transform:translateX(4px)}
+    ::selection {
+      background: var(--indigo);
+      color: #fff
+    }
 
-/* ===== FOOTER ===== */
-footer{background:var(--paper);border-top:1px solid var(--line);padding:72px 0 40px}
-.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:56px}
-.foot-brand .brand{color:var(--indigo);display:inline-block;margin-bottom:16px}
-.foot-logo{margin-bottom:18px}
-.foot-brand p{font-size:13.5px;font-weight:300;color:var(--ink-3);line-height:1.7;max-width:280px}
-.foot-col h5{font-size:12px;font-weight:600;letter-spacing:.5px;color:var(--ink-4);text-transform:uppercase;margin-bottom:18px}
-.foot-col a{display:block;font-size:14px;font-weight:300;color:var(--ink-2);text-decoration:none;margin-bottom:12px;transition:color .25s}
-.foot-col a:hover{color:var(--indigo)}
-.foot-bot{border-top:1px solid var(--line);padding-top:28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px}
-.foot-bot .lg{font-size:11px;font-weight:300;color:var(--ink-4);line-height:1.7;max-width:580px}
-.foot-app{display:inline-flex;align-items:center;gap:9px;font-size:12.5px;color:var(--ink-3);text-decoration:none;border:1px solid var(--line);padding:9px 18px;border-radius:100px;transition:all .3s}
-.foot-app:hover{border-color:var(--line-2);color:var(--ink)}
-.foot-app svg{width:14px;height:14px;fill:currentColor;opacity:.65}
+    .wrap {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 40px
+    }
 
-/* ===== MOBILE NAV ===== */
-.nav-burger{display:none;width:44px;height:44px;border:none;background:transparent;cursor:pointer;align-items:center;justify-content:center;border-radius:8px;-webkit-tap-highlight-color:transparent;flex-shrink:0;flex-direction:column;gap:5px}
-.nav-burger:hover{background:var(--fog)}
-.nav-burger span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px;transition:transform .35s cubic-bezier(.16,1,.3,1),opacity .25s ease}
-body.menu-open .nav-burger span{background:var(--ink)}
-body.menu-open .nav-burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-body.menu-open .nav-burger span:nth-child(2){opacity:0}
-body.menu-open .nav-burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-body.menu-open{overflow:hidden}
-body.menu-open .brand{color:var(--indigo)!important}
-.mobile-menu{position:fixed;inset:0;z-index:190;background:var(--paper);display:flex;flex-direction:column;padding:96px 28px 40px;opacity:0;visibility:hidden;transform:translateY(-12px);transition:opacity .35s ease,transform .35s cubic-bezier(.16,1,.3,1),visibility .35s;overflow-y:auto;-webkit-overflow-scrolling:touch}
-body.menu-open .mobile-menu{opacity:1;visibility:visible;transform:none}
-.mobile-menu .mm-links{position:static;display:flex;flex-direction:column}
-.mobile-menu .mm-links a{font-family:var(--serif);font-weight:300;font-size:30px;letter-spacing:-.01em;color:var(--ink);text-decoration:none;padding:18px 0;border-bottom:1px solid var(--line);transition:color .2s}
-.mobile-menu .mm-links a:hover,.mobile-menu .mm-links a:focus-visible{color:var(--indigo)}
-.mobile-menu .mm-actions{margin-top:auto;display:flex;flex-direction:column;gap:12px;padding-top:36px}
-.mobile-menu .mm-actions a{font-family:var(--sans);font-size:16px;font-weight:500;text-decoration:none;text-align:center;padding:16px;border-radius:10px;transition:all .25s}
-.mobile-menu .mm-actions a.start{background:var(--indigo);color:#fff}
-.mobile-menu .mm-actions a.start:hover{background:var(--indigo-2)}
-.mobile-menu .mm-actions a.login{border:1px solid var(--line-2);color:var(--ink-2)}
-.mobile-menu .mm-actions a.login:hover{background:var(--fog);border-color:var(--indigo)}
-:focus-visible{outline:2px solid var(--indigo);outline-offset:2px}
+    /* ===== NAV ===== */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      transition: all .4s ease
+    }
 
-/* ===== RESPONSIVE ===== */
-@media(max-width:720px){
-  .wrap{padding:0 24px}
-  nav .bar,nav.scrolled .bar{padding:16px 24px}
-  .nav-burger{display:inline-flex}
-  .nav-r{display:none}
-  .phero{padding:132px 0 60px}
-  .article{padding:52px 0 8px}
-  .article .section{margin-top:48px}
-  .article blockquote{margin:34px 0;padding:24px 22px}
-  .fcta{padding:84px 0}
-  .foot-grid{grid-template-columns:1fr 1fr;gap:30px 32px}
-  .foot-brand{grid-column:1 / -1}
-  .foot-brand p{max-width:none}
-}
-@media(max-width:460px){
-  .foot-grid{grid-template-columns:1fr;gap:28px}
-}
-@media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;transition-duration:.01ms!important}
-  .phero .pk,.phero h1,.phero .pmeta{opacity:1}
-}
-</style>
+    nav .bar {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 18px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: padding .4s ease
+    }
+
+    nav.scrolled {
+      background: rgba(255, 255, 255, .85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--line)
+    }
+
+    nav.scrolled .bar {
+      padding: 13px 40px
+    }
+
+    .brand {
+      color: var(--indigo);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      line-height: 1
+    }
+
+    .brand-mark {
+      height: 28px;
+      width: auto;
+      display: block;
+      color: inherit;
+      flex-shrink: 0
+    }
+
+    .brand-word {
+      font-family: var(--sans);
+      font-weight: 800;
+      font-size: 22px;
+      letter-spacing: .4px;
+      color: inherit;
+      line-height: 1
+    }
+
+    .brand-logo {
+      height: 46px;
+      width: auto;
+      display: block;
+      color: inherit
+    }
+
+    .nav-r {
+      display: flex;
+      align-items: center;
+      gap: 8px
+    }
+
+    .nav-r a {
+      font-size: 14px;
+      color: var(--ink-2);
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      transition: all .25s
+    }
+
+    .nav-r a:hover {
+      background: var(--fog)
+    }
+
+    .nav-r .start {
+      background: var(--indigo);
+      color: #fff !important;
+      font-weight: 500;
+      padding: 9px 20px
+    }
+
+    .nav-r .start:hover {
+      background: var(--indigo-2) !important
+    }
+
+    .nav-r .login {
+      border: 1px solid var(--line-2);
+      color: var(--ink-2);
+      font-weight: 500;
+      padding: 8px 18px
+    }
+
+    .nav-r .login:hover {
+      background: var(--fog);
+      border-color: var(--indigo)
+    }
+
+    /* ===== ARTICLE HERO ===== */
+    .phero {
+      background: var(--indigo);
+      color: #fff;
+      padding: 180px 0 96px;
+      position: relative;
+      overflow: hidden
+    }
+
+    .phero::after {
+      content: '';
+      position: absolute;
+      top: -120px;
+      right: -80px;
+      width: 480px;
+      height: 480px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 255, 255, .06), transparent 65%)
+    }
+
+    .phero .wrap {
+      position: relative;
+      z-index: 1
+    }
+
+    .phero .pk {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .5px;
+      color: rgba(255, 255, 255, .6);
+      margin-bottom: 22px;
+      display: flex;
+      align-items: center;
+      gap: 12px
+    }
+
+    .phero .pk::before {
+      content: '';
+      width: 28px;
+      height: 1px;
+      background: rgba(255, 255, 255, .4)
+    }
+
+    .phero h1 {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-size: clamp(38px, 5.2vw, 68px);
+      line-height: 1.06;
+      letter-spacing: -.02em;
+      max-width: 20ch;
+      margin-bottom: 26px
+    }
+
+    .phero h1 em {
+      font-style: italic;
+      color: rgba(255, 255, 255, .82)
+    }
+
+    .phero .pmeta {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .55)
+    }
+
+    .phero .pk,
+    .phero h1,
+    .phero .pmeta {
+      opacity: 0;
+      animation: fu .9s cubic-bezier(.16, 1, .3, 1) forwards
+    }
+
+    .phero h1 {
+      animation-delay: .12s
+    }
+
+    .phero .pmeta {
+      animation-delay: .28s
+    }
+
+    @keyframes fu {
+      to {
+        opacity: 1;
+        transform: none
+      }
+    }
+
+    /* ===== ARTICLE BODY ===== */
+    .article {
+      padding: 88px 0 8px;
+      background: var(--paper)
+    }
+
+    .article .col {
+      max-width: 760px
+    }
+
+    .article .lead {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-size: clamp(22px, 2.6vw, 29px);
+      line-height: 1.5;
+      letter-spacing: -.01em;
+      color: var(--ink);
+      margin-bottom: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--line)
+    }
+
+    .article p {
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 1.8;
+      color: var(--ink-2);
+      margin-bottom: 24px
+    }
+
+    .article p em {
+      font-style: italic;
+      color: var(--ink)
+    }
+
+    .article .section {
+      margin-top: 64px;
+      margin-bottom: 6px
+    }
+
+    .article .section-label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .5px;
+      color: var(--indigo);
+      margin-bottom: 14px
+    }
+
+    .article h2 {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-size: clamp(28px, 3.4vw, 42px);
+      line-height: 1.14;
+      letter-spacing: -.02em;
+      color: var(--ink);
+      margin-bottom: 22px
+    }
+
+    .article blockquote {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-style: italic;
+      font-size: clamp(23px, 2.9vw, 31px);
+      line-height: 1.4;
+      letter-spacing: -.01em;
+      color: var(--indigo);
+      margin: 48px 0;
+      padding: 30px 34px;
+      background: var(--indigo-wash);
+      border-left: 3px solid var(--indigo);
+      border-radius: 0 8px 8px 0
+    }
+
+    .article .byline {
+      margin-top: 64px;
+      padding-top: 28px;
+      border-top: 1px solid var(--line);
+      font-size: 15px;
+      font-style: italic;
+      color: var(--ink-3);
+      line-height: 1.7
+    }
+
+    /* ===== FINAL CTA ===== */
+    .fcta {
+      padding: 130px 0;
+      text-align: center;
+      background: var(--fog)
+    }
+
+    .fcta h2 {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-size: clamp(34px, 4.6vw, 60px);
+      line-height: 1.05;
+      letter-spacing: -.02em;
+      color: var(--ink);
+      max-width: 16ch;
+      margin: 0 auto 22px
+    }
+
+    .fcta h2 em {
+      font-style: italic;
+      color: var(--indigo)
+    }
+
+    .fcta p {
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--ink-3);
+      margin-bottom: 38px
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 15px 30px;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all .3s cubic-bezier(.16, 1, .3, 1)
+    }
+
+    .fcta .btn-w {
+      background: var(--indigo);
+      color: #fff
+    }
+
+    .fcta .btn-w:hover {
+      background: var(--indigo-2);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 36px rgba(10, 16, 89, .2)
+    }
+
+    .btn .a {
+      transition: transform .3s
+    }
+
+    .btn:hover .a {
+      transform: translateX(4px)
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--paper);
+      border-top: 1px solid var(--line);
+      padding: 72px 0 40px
+    }
+
+    .foot-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 56px
+    }
+
+    .foot-brand .brand {
+      color: var(--indigo);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px
+    }
+
+    .foot-brand .brand-mark {
+      height: 34px
+    }
+
+    .foot-brand .brand-word {
+      font-size: 23px
+    }
+
+    .foot-logo {
+      margin-bottom: 18px
+    }
+
+    .foot-brand p {
+      font-size: 13.5px;
+      font-weight: 300;
+      color: var(--ink-3);
+      line-height: 1.7;
+      max-width: 280px
+    }
+
+    .foot-col h5 {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .5px;
+      color: var(--ink-4);
+      text-transform: uppercase;
+      margin-bottom: 18px
+    }
+
+    .foot-col a {
+      display: block;
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--ink-2);
+      text-decoration: none;
+      margin-bottom: 12px;
+      transition: color .25s
+    }
+
+    .foot-col a:hover {
+      color: var(--indigo)
+    }
+
+    .foot-bot {
+      border-top: 1px solid var(--line);
+      padding-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 18px
+    }
+
+    .foot-bot .lg {
+      font-size: 11px;
+      font-weight: 300;
+      color: var(--ink-4);
+      line-height: 1.7;
+      max-width: 580px
+    }
+
+    .foot-app {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 12.5px;
+      color: var(--ink-3);
+      text-decoration: none;
+      border: 1px solid var(--line);
+      padding: 9px 18px;
+      border-radius: 100px;
+      transition: all .3s
+    }
+
+    .foot-app:hover {
+      border-color: var(--line-2);
+      color: var(--ink)
+    }
+
+    .foot-app svg {
+      width: 14px;
+      height: 14px;
+      fill: currentColor;
+      opacity: .65
+    }
+
+    /* ===== MOBILE NAV ===== */
+    .nav-burger {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      -webkit-tap-highlight-color: transparent;
+      flex-shrink: 0;
+      flex-direction: column;
+      gap: 5px
+    }
+
+    .nav-burger:hover {
+      background: var(--fog)
+    }
+
+    .nav-burger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--ink);
+      border-radius: 2px;
+      transition: transform .35s cubic-bezier(.16, 1, .3, 1), opacity .25s ease
+    }
+
+    body.menu-open .nav-burger span {
+      background: var(--ink)
+    }
+
+    body.menu-open .nav-burger span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg)
+    }
+
+    body.menu-open .nav-burger span:nth-child(2) {
+      opacity: 0
+    }
+
+    body.menu-open .nav-burger span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg)
+    }
+
+    body.menu-open {
+      overflow: hidden
+    }
+
+    body.menu-open .brand {
+      color: var(--indigo) !important
+    }
+
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      z-index: 190;
+      background: var(--paper);
+      display: flex;
+      flex-direction: column;
+      padding: 96px 28px 40px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-12px);
+      transition: opacity .35s ease, transform .35s cubic-bezier(.16, 1, .3, 1), visibility .35s;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch
+    }
+
+    body.menu-open .mobile-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: none
+    }
+
+    .mobile-menu .mm-links {
+      position: static;
+      display: flex;
+      flex-direction: column
+    }
+
+    .mobile-menu .mm-links a {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-size: 30px;
+      letter-spacing: -.01em;
+      color: var(--ink);
+      text-decoration: none;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+      transition: color .2s
+    }
+
+    .mobile-menu .mm-links a:hover,
+    .mobile-menu .mm-links a:focus-visible {
+      color: var(--indigo)
+    }
+
+    .mobile-menu .mm-actions {
+      margin-top: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding-top: 36px
+    }
+
+    .mobile-menu .mm-actions a {
+      font-family: var(--sans);
+      font-size: 16px;
+      font-weight: 500;
+      text-decoration: none;
+      text-align: center;
+      padding: 16px;
+      border-radius: 10px;
+      transition: all .25s
+    }
+
+    .mobile-menu .mm-actions a.start {
+      background: var(--indigo);
+      color: #fff
+    }
+
+    .mobile-menu .mm-actions a.start:hover {
+      background: var(--indigo-2)
+    }
+
+    .mobile-menu .mm-actions a.login {
+      border: 1px solid var(--line-2);
+      color: var(--ink-2)
+    }
+
+    .mobile-menu .mm-actions a.login:hover {
+      background: var(--fog);
+      border-color: var(--indigo)
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--indigo);
+      outline-offset: 2px
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media(max-width:720px) {
+      .wrap {
+        padding: 0 24px
+      }
+
+      nav .bar,
+      nav.scrolled .bar {
+        padding: 16px 24px
+      }
+
+      .nav-burger {
+        display: inline-flex
+      }
+
+      .nav-r {
+        display: none
+      }
+
+      .phero {
+        padding: 132px 0 60px
+      }
+
+      .article {
+        padding: 52px 0 8px
+      }
+
+      .article .section {
+        margin-top: 48px
+      }
+
+      .article blockquote {
+        margin: 34px 0;
+        padding: 24px 22px
+      }
+
+      .fcta {
+        padding: 84px 0
+      }
+
+      .foot-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px 32px
+      }
+
+      .foot-brand {
+        grid-column: 1 / -1
+      }
+
+      .foot-brand p {
+        max-width: none
+      }
+    }
+
+    @media(max-width:460px) {
+      .foot-grid {
+        grid-template-columns: 1fr;
+        gap: 28px
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        animation-delay: 0s !important;
+        transition-duration: .01ms !important
+      }
+
+      .phero .pk,
+      .phero h1,
+      .phero .pmeta {
+        opacity: 1
+      }
+    }
+  </style>
 </head>
+
 <body>
-<nav id="nav" class="scrolled">
-  <div class="bar">
-    <a href="index.html" class="brand" aria-label="Finvise — the new generation valuation firm">
-      <svg class="brand-logo" viewBox="0 0 334 96" role="img" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="48" cy="48" r="34" fill="none" stroke="currentColor" stroke-width="1.6"/>
-        <text x="48" y="62" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-weight="400" font-size="40" fill="currentColor">F</text>
-        <text x="98" y="44" font-family="Georgia,'Times New Roman',serif" font-weight="400" font-size="31" letter-spacing="1.5" fill="currentColor">FINVISE</text>
-        <line x1="99" y1="56" x2="276" y2="56" stroke="currentColor" stroke-opacity="0.28" stroke-width="0.6"/>
-        <text x="99" y="70" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="400" font-size="7.5" letter-spacing="2.4" fill="currentColor" opacity="0.62">THE NEW GENERATION VALUATION FIRM</text>
-      </svg>
-    </a>
-    <div class="nav-r">
+  <nav id="nav" class="scrolled">
+    <div class="bar">
+      <a href="index.html" class="brand" aria-label="Finvise — the new generation valuation firm">
+        <svg class="brand-mark" viewBox="0 0 512 512" role="img" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+          <g transform="translate(0,512) scale(0.1,-0.1)" fill="currentColor" stroke="none">
+            <path
+              d="M760 5113 c-136 -14 -281 -66 -390 -138 -84 -56 -198 -176 -250 -264 -48 -82 -95 -221 -109 -324 -8 -53 -11 -647 -11 -1846 0 -1545 2 -1780 15 -1856 60 -343 328 -610 671 -670 131 -23 3618 -23 3749 0 344 60 610 326 670 670 13 76 15 321 15 1875 0 1967 3 1880 -61 2039 -97 242 -295 417 -559 494 l-75 22 -1815 1 c-998 1 -1831 -1 -1850 -3z m3834 -1030 c-81 -159 -152 -293 -158 -300 -17 -19 -3684 -20 -3701 -1 -11 12 -345 561 -353 580 -2 4 978 8 2178 8 l2181 0 -147 -287z m-2435 -1590 c223 -392 408 -713 411 -713 3 0 109 189 237 420 l231 420 -264 0 -264 0 2 293 3 292 777 0 c428 0 778 -3 778 -7 0 -4 -313 -557 -696 -1228 l-697 -1221 -110 3 -110 3 -549 950 c-302 523 -619 1070 -704 1217 -85 147 -154 272 -154 278 0 7 115 9 352 8 l351 -3 406 -712z" />
+          </g>
+        </svg><span class="brand-word">FINVISE</span>
+      </a>
+      <div class="nav-r">
+        <a href="cases.html">Cases</a>
+        <a href="about.html">About us</a>
+        <a href="contact.html">Contact</a>
+        <a target="_blank" rel="noopener noreferrer"
+          href="https://outlook.office.com/book/FINVISEMeetingHub@finvise.com/s/BhD4l-hmk0Kio8RT5LA6Bg2?ismsaljsauthenabled"
+          class="login">Login</a>
+
+        <a href="contact.html" class="start">Get started</a>
+      </div>
+      <button class="nav-burger" id="navBurger" type="button" aria-label="Open menu" aria-expanded="false"
+        aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <nav class="mm-links" aria-label="Mobile navigation">
       <a href="cases.html">Cases</a>
-      <a href="about.html">About</a>
+      <a href="about.html">About us</a>
       <a href="contact.html">Contact</a>
-      <a href="#" class="login">Login</a>
+    </nav>
+    <div class="mm-actions">
+      <a target="_blank" rel="noopener noreferrer"
+        href="https://outlook.office.com/book/FINVISEMeetingHub@finvise.com/s/BhD4l-hmk0Kio8RT5LA6Bg2?ismsaljsauthenabled"
+        class="login">Login</a>
+
       <a href="contact.html" class="start">Get started</a>
     </div>
-    <button class="nav-burger" id="navBurger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
-      <span></span><span></span><span></span>
-    </button>
   </div>
-</nav>
 
-<!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-  <nav class="mm-links" aria-label="Mobile navigation">
-    <a href="cases.html">Cases</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-  <div class="mm-actions">
-    <a href="#" class="login">Login</a>
-    <a href="contact.html" class="start">Get started</a>
-  </div>
-</div>
-
-<header class="phero">
-  <div class="wrap">
-    <div class="pk">Perspective &middot; Artificial Intelligence</div>
-    <h1>AI Isn't a Tool You Add. <em>It's a Foundation You Build On.</em></h1>
-    <div class="pmeta">A perspective from the Head of Valuation</div>
-  </div>
-</header>
-
-<main class="article">
-  <div class="wrap">
-    <div class="col">
-
-      <p class="lead">There's a firm I know of (good people, capable surveyors) that still prints out draft reports to proofread them. On paper. With a pen.</p>
-
-      <p>Ask them whether they've adapted to technology in the workplace and they'll say yes, of course. They use computers. They have email. They've "gone digital." And in the strictest sense, they're right. But somewhere between typing a report into Microsoft Word and printing it out to check for errors, the revolution passed them by.</p>
-
-      <p>This isn't a dig at that firm. It's a pattern I see across the profession. We adopted the tools of each technological era without ever fundamentally rethinking how we work. We swapped typewriters for keyboards, filing cabinets for shared drives, and called it transformation. We layered new technology on top of old habits, and then wondered why the efficiency gains never quite materialised.</p>
-
-      <p>AI is going to expose that gap in a way no previous technology has.</p>
-
-      <div class="section">
-        <span class="section-label">The problem</span>
-        <h2>The Illusion of Adoption</h2>
-      </div>
-
-      <p>When a firm plugs an AI writing assistant into a workflow that still runs on manually collected data, disconnected spreadsheets and email chains, they're not adopting AI. They're decorating a broken system with an expensive finish.</p>
-
-      <p>The output will only ever be as good as the foundation underneath it. Fragmented data produces fragmented answers. Manual inputs create manual bottlenecks. If the underlying process is inefficient, AI doesn't solve that: it amplifies it. You get faster confusion.</p>
-
-      <blockquote>How does this workflow actually need to be designed for AI to add genuine value at every stage?</blockquote>
-
-      <p>That question requires honesty. It means looking at how data is captured, structured, stored and retrieved. It means examining every handover point in a workflow and asking whether a human is still the right decision-maker there, or whether that step exists only because the system was never smart enough to handle it. It means being willing to redesign, not just retrofit.</p>
-
-      <div class="section">
-        <span class="section-label">Our approach</span>
-        <h2>What "AI-First" Actually Means in Practice</h2>
-      </div>
-
-      <p>In our business, the commitment to AI isn't a feature we've added. It's the architecture we've built from. Our entire workflow, from instruction through to delivered report, has been designed around the question of where technology can do more, and where professional judgement remains irreplaceable.</p>
-
-      <p>The result isn't a firm that happens to use some AI tools. It's a firm that can produce institutional-quality RICS-compliant valuations in hours rather than days, without compromising rigour. That's not a marketing claim. It's what happens when the system is right.</p>
-
-      <p>But the system only works because it was built that way. You cannot reverse-engineer it into a traditional workflow without rebuilding the workflow itself.</p>
-
-      <div class="section">
-        <span class="section-label">Standards &amp; regulation</span>
-        <h2>The Profession Is Catching Up</h2>
-      </div>
-
-      <p>RICS clearly sees this. The recent relaunch of the Tech Partner Programme, restructured to place greater emphasis on ethical AI and responsible technology adoption, is a meaningful signal about where the profession is heading. This isn't RICS endorsing novelty. It's RICS recognising that the adoption of AI is now a professional question, not just a commercial one.</p>
-
-      <p>More significantly, RICS published its professional standard <em>Responsible Use of Artificial Intelligence in Surveying Practice</em> in September 2025, effective from March 2026. This is a conduct standard, mandatory rather than advisory. It sets requirements around data governance, system governance, risk management, procurement due diligence and client communication. It places the skill and judgement of the professional surveyor at the centre, while requiring that use of AI systems which materially affect service delivery is properly documented, assessed and managed.</p>
-
-      <p>Read carefully, this standard is less about restricting AI and more about raising the bar for how it's used. It's a framework for firms that want to do this properly, not a reason to delay.</p>
-
-      <div class="section">
-        <span class="section-label">Culture &amp; change</span>
-        <h2>A Mindset Question as Much as a Technology Question</h2>
-      </div>
-
-      <p>The firms that will struggle with this aren't necessarily the ones with the oldest systems. They're the ones where innovation isn't built into the culture. Where the default response to change is "we already do something like that," because doing something like that, and genuinely rethinking the approach, are very different things.</p>
-
-      <p>AI adoption, done properly, requires a willingness to question processes that currently work "well enough." It requires investment in data quality that doesn't produce immediate visible returns. It requires training people not just to use tools but to think differently about what their role is when the tool is doing more.</p>
-
-      <p>None of that is comfortable. But the alternative, bolting AI features onto unreconstructed workflows and hoping the outcomes improve, is what will produce the profession's equivalent of printing out a Word document to proofread it: the appearance of modernity without any of the substance.</p>
-
-      <div class="section">
-        <span class="section-label">Looking ahead</span>
-        <h2>The Opportunity Is Real</h2>
-      </div>
-
-      <p>I want to be clear: this isn't pessimism about where surveying is heading. Quite the opposite. The potential here is genuinely significant. AI, when properly integrated, doesn't threaten the chartered surveyor. It frees them to spend more time doing what they do best, exercising professional judgement, building client relationships, navigating complexity that no system can fully model.</p>
-
-      <p>The technology that changes our lives most profoundly tends, eventually, to become invisible. We stop talking about electricity and just use it. That may well be where AI ends up, not a conversation topic but infrastructure, the thing that makes everything else possible.</p>
-
-      <p>The question for our profession is whether we arrive at that point having built on a genuine foundation, or still carrying the weight of systems we never got around to rethinking.</p>
-
-      <p>For us, the answer was straightforward. Build it right from the start.</p>
-
-      <div class="byline">A perspective from the Head of Valuation at Finvise — the new generation valuation firm.</div>
-
+  <header class="phero">
+    <div class="wrap">
+      <div class="pk">Perspective &middot; Artificial Intelligence</div>
+      <h1>AI Isn't a Tool You Add. <em>It's a Foundation You Build On.</em></h1>
+      <div class="pmeta">A perspective from the Head of Valuation</div>
     </div>
-  </div>
-</main>
+  </header>
 
-<section class="fcta">
-  <div class="wrap">
-    <h2>Valuations that move <em>at your speed</em></h2>
-    <p>See what an AI-first valuation process delivers in practice.</p>
-    <a href="contact.html" class="btn btn-w">Talk to us <span class="a">→</span></a>
-  </div>
-</section>
+  <main class="article">
+    <div class="wrap">
+      <div class="col">
 
-<footer>
-  <div class="wrap">
-    <div class="foot-grid">
-      <div class="foot-brand">
-        <a href="index.html" class="brand foot-logo" aria-label="Finvise — the new generation valuation firm">
-          <svg viewBox="0 0 334 96" role="img" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" style="height:46px;width:auto;display:block">
-            <circle cx="48" cy="48" r="34" fill="none" stroke="currentColor" stroke-width="1.6"/>
-            <text x="48" y="62" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-weight="400" font-size="40" fill="currentColor">F</text>
-            <text x="98" y="44" font-family="Georgia,'Times New Roman',serif" font-weight="400" font-size="31" letter-spacing="1.5" fill="currentColor">FINVISE</text>
-            <line x1="99" y1="56" x2="276" y2="56" stroke="currentColor" stroke-opacity="0.25" stroke-width="0.6"/>
-            <text x="99" y="70" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="400" font-size="7.5" letter-spacing="2.4" fill="currentColor" opacity="0.6">THE NEW GENERATION VALUATION FIRM</text>
+        <p class="lead">There's a firm I know of (good people, capable surveyors) that still prints out draft reports to
+          proofread them. On paper. With a pen.</p>
+
+        <p>Ask them whether they've adapted to technology in the workplace and they'll say yes, of course. They use
+          computers. They have email. They've "gone digital." And in the strictest sense, they're right. But somewhere
+          between typing a report into Microsoft Word and printing it out to check for errors, the revolution passed
+          them by.</p>
+
+        <p>This isn't a dig at that firm. It's a pattern I see across the profession. We adopted the tools of each
+          technological era without ever fundamentally rethinking how we work. We swapped typewriters for keyboards,
+          filing cabinets for shared drives, and called it transformation. We layered new technology on top of old
+          habits, and then wondered why the efficiency gains never quite materialised.</p>
+
+        <p>AI is going to expose that gap in a way no previous technology has.</p>
+
+        <div class="section">
+          <span class="section-label">The problem</span>
+          <h2>The Illusion of Adoption</h2>
+        </div>
+
+        <p>When a firm plugs an AI writing assistant into a workflow that still runs on manually collected data,
+          disconnected spreadsheets and email chains, they're not adopting AI. They're decorating a broken system with
+          an expensive finish.</p>
+
+        <p>The output will only ever be as good as the foundation underneath it. Fragmented data produces fragmented
+          answers. Manual inputs create manual bottlenecks. If the underlying process is inefficient, AI doesn't solve
+          that: it amplifies it. You get faster confusion.</p>
+
+        <blockquote>How does this workflow actually need to be designed for AI to add genuine value at every stage?
+        </blockquote>
+
+        <p>That question requires honesty. It means looking at how data is captured, structured, stored and retrieved.
+          It means examining every handover point in a workflow and asking whether a human is still the right
+          decision-maker there, or whether that step exists only because the system was never smart enough to handle it.
+          It means being willing to redesign, not just retrofit.</p>
+
+        <div class="section">
+          <span class="section-label">Our approach</span>
+          <h2>What "AI-First" Actually Means in Practice</h2>
+        </div>
+
+        <p>In our business, the commitment to AI isn't a feature we've added. It's the architecture we've built from.
+          Our entire workflow, from instruction through to delivered report, has been designed around the question of
+          where technology can do more, and where professional judgement remains irreplaceable.</p>
+
+        <p>The result isn't a firm that happens to use some AI tools. It's a firm that can produce institutional-quality
+          RICS-compliant valuations in hours rather than days, without compromising rigour. That's not a marketing
+          claim. It's what happens when the system is right.</p>
+
+        <p>But the system only works because it was built that way. You cannot reverse-engineer it into a traditional
+          workflow without rebuilding the workflow itself.</p>
+
+        <div class="section">
+          <span class="section-label">Standards &amp; regulation</span>
+          <h2>The Profession Is Catching Up</h2>
+        </div>
+
+        <p>RICS clearly sees this. The recent relaunch of the Tech Partner Programme, restructured to place greater
+          emphasis on ethical AI and responsible technology adoption, is a meaningful signal about where the profession
+          is heading. This isn't RICS endorsing novelty. It's RICS recognising that the adoption of AI is now a
+          professional question, not just a commercial one.</p>
+
+        <p>More significantly, RICS published its professional standard <em>Responsible Use of Artificial Intelligence
+            in Surveying Practice</em> in September 2025, effective from March 2026. This is a conduct standard,
+          mandatory rather than advisory. It sets requirements around data governance, system governance, risk
+          management, procurement due diligence and client communication. It places the skill and judgement of the
+          professional surveyor at the centre, while requiring that use of AI systems which materially affect service
+          delivery is properly documented, assessed and managed.</p>
+
+        <p>Read carefully, this standard is less about restricting AI and more about raising the bar for how it's used.
+          It's a framework for firms that want to do this properly, not a reason to delay.</p>
+
+        <div class="section">
+          <span class="section-label">Culture &amp; change</span>
+          <h2>A Mindset Question as Much as a Technology Question</h2>
+        </div>
+
+        <p>The firms that will struggle with this aren't necessarily the ones with the oldest systems. They're the ones
+          where innovation isn't built into the culture. Where the default response to change is "we already do
+          something like that," because doing something like that, and genuinely rethinking the approach, are very
+          different things.</p>
+
+        <p>AI adoption, done properly, requires a willingness to question processes that currently work "well enough."
+          It requires investment in data quality that doesn't produce immediate visible returns. It requires training
+          people not just to use tools but to think differently about what their role is when the tool is doing more.
+        </p>
+
+        <p>None of that is comfortable. But the alternative, bolting AI features onto unreconstructed workflows and
+          hoping the outcomes improve, is what will produce the profession's equivalent of printing out a Word document
+          to proofread it: the appearance of modernity without any of the substance.</p>
+
+        <div class="section">
+          <span class="section-label">Looking ahead</span>
+          <h2>The Opportunity Is Real</h2>
+        </div>
+
+        <p>I want to be clear: this isn't pessimism about where surveying is heading. Quite the opposite. The potential
+          here is genuinely significant. AI, when properly integrated, doesn't threaten the chartered surveyor. It frees
+          them to spend more time doing what they do best, exercising professional judgement, building client
+          relationships, navigating complexity that no system can fully model.</p>
+
+        <p>The technology that changes our lives most profoundly tends, eventually, to become invisible. We stop talking
+          about electricity and just use it. That may well be where AI ends up, not a conversation topic but
+          infrastructure, the thing that makes everything else possible.</p>
+
+        <p>The question for our profession is whether we arrive at that point having built on a genuine foundation, or
+          still carrying the weight of systems we never got around to rethinking.</p>
+
+        <p>For us, the answer was straightforward. Build it right from the start.</p>
+
+        <div class="byline">A perspective from the Head of Valuation at Finvise — the new generation valuation firm.
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <section class="fcta">
+    <div class="wrap">
+      <h2>Valuations that move <em>at your speed</em></h2>
+      <p>See what an AI-first valuation process delivers in practice.</p>
+      <a href="contact.html" class="btn btn-w">Talk to us <span class="a">→</span></a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <a href="index.html" class="brand foot-logo" aria-label="Finvise — the new generation valuation firm">
+            <svg class="brand-mark" viewBox="0 0 512 512" role="img" aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg">
+              <g transform="translate(0,512) scale(0.1,-0.1)" fill="currentColor" stroke="none">
+                <path
+                  d="M760 5113 c-136 -14 -281 -66 -390 -138 -84 -56 -198 -176 -250 -264 -48 -82 -95 -221 -109 -324 -8 -53 -11 -647 -11 -1846 0 -1545 2 -1780 15 -1856 60 -343 328 -610 671 -670 131 -23 3618 -23 3749 0 344 60 610 326 670 670 13 76 15 321 15 1875 0 1967 3 1880 -61 2039 -97 242 -295 417 -559 494 l-75 22 -1815 1 c-998 1 -1831 -1 -1850 -3z m3834 -1030 c-81 -159 -152 -293 -158 -300 -17 -19 -3684 -20 -3701 -1 -11 12 -345 561 -353 580 -2 4 978 8 2178 8 l2181 0 -147 -287z m-2435 -1590 c223 -392 408 -713 411 -713 3 0 109 189 237 420 l231 420 -264 0 -264 0 2 293 3 292 777 0 c428 0 778 -3 778 -7 0 -4 -313 -557 -696 -1228 l-697 -1221 -110 3 -110 3 -549 950 c-302 523 -619 1070 -704 1217 -85 147 -154 272 -154 278 0 7 115 9 352 8 l351 -3 406 -712z" />
+              </g>
+            </svg><span class="brand-word">FINVISE</span>
+          </a>
+          <p>The new generation valuation firm. RICS-qualified surveyors powered by proprietary, latest-grade
+            technology.</p>
+        </div>
+        <div class="foot-col">
+          <h5>Services</h5>
+          <a href="lenders.html">For lenders</a>
+          <a href="insurers.html">For insurers</a>
+          <a href="public-bodies.html">For public bodies</a>
+          <a href="for-you.html">For you</a>
+        </div>
+        <div class="foot-col">
+          <h5>Company</h5>
+          <a href="about.html">About us</a>
+          <a href="cases.html">Cases</a>
+          <a href="valuation-firms.html#partnerships">Partnerships</a>
+          <a href="work-with-us.html">Work with us</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="foot-col">
+          <h5>Legal</h5>
+          <a href="about.html#compliance">Compliance</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="cookies.html">Cookies</a>
+        </div>
+      </div>
+      <div class="foot-bot">
+        <div class="lg">© 2026 Imperium Global Ventures Ltd (T/A FINVISE). Registered in England and Wales, No.
+          13498329. VAT GB399 5320 52. 86-90 Paul Street, London EC2A 4NE.</div>
+        <!-- <a href="#" class="foot-app">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z" />
           </svg>
-        </a>
-        <p>The new generation valuation firm. RICS-qualified surveyors powered by proprietary, latest-grade technology.</p>
-      </div>
-      <div class="foot-col">
-        <h5>Services</h5>
-        <a href="lenders.html">For lenders</a>
-        <a href="insurers.html">For insurers</a>
-        <a href="public-bodies.html">For public bodies</a>
-        <a href="for-you.html">For you</a>
-      </div>
-      <div class="foot-col">
-        <h5>Company</h5>
-        <a href="about.html">About us</a>
-        <a href="cases.html">Cases</a>
-        <a href="valuation-firms.html#partnerships">Partnerships</a>
-        <a href="work-with-us.html">Work with us</a>
-        <a href="contact.html">Contact</a>
-      </div>
-      <div class="foot-col">
-        <h5>Legal</h5>
-        <a href="about.html#compliance">Compliance</a>
-        <a href="#">Privacy</a>
-        <a href="#">Cookies</a>
+          Homeowner? Download the app
+        </a> -->
       </div>
     </div>
-    <div class="foot-bot">
-      <div class="lg">© 2026 Imperium Global Ventures Ltd (T/A FINVISE). Registered in England and Wales, No. 13498329. VAT GB399 5320 52. 86-90 Paul Street, London EC2A 4NE.</div>
-      <a href="#" class="foot-app">
-        <svg viewBox="0 0 24 24"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>
-        Homeowner? Download the app
-      </a>
-    </div>
-  </div>
-</footer>
+  </footer>
 
-<script>
-// Mobile menu
-(function(){
-  const burger=document.getElementById('navBurger');
-  const menu=document.getElementById('mobileMenu');
-  if(!burger||!menu)return;
-  function setOpen(open){
-    document.body.classList.toggle('menu-open',open);
-    burger.setAttribute('aria-expanded',open?'true':'false');
-    burger.setAttribute('aria-label',open?'Close menu':'Open menu');
-    menu.setAttribute('aria-hidden',open?'false':'true');
-  }
-  burger.addEventListener('click',()=>setOpen(!document.body.classList.contains('menu-open')));
-  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setOpen(false)));
-  document.addEventListener('keydown',e=>{if(e.key==='Escape')setOpen(false);});
-})();
-</script>
+  <script>
+    // Mobile menu (added)
+    (function () {
+      const burger = document.getElementById('navBurger')
+      const menu = document.getElementById('mobileMenu')
+      if (!burger || !menu) return
+      function setOpen(open) {
+        document.body.classList.toggle('menu-open', open)
+        burger.setAttribute('aria-expanded', open ? 'true' : 'false')
+        burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu')
+        menu.setAttribute('aria-hidden', open ? 'false' : 'true')
+      }
+      burger.addEventListener('click', () => setOpen(!document.body.classList.contains('menu-open')))
+      menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setOpen(false)))
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') setOpen(false) })
+    })()
+
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target) } }), { threshold: .15, rootMargin: '0px 0px -40px 0px' })
+    document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+    (function () {
+      const nav = document.getElementById('nav')
+      if (!nav) return
+      const hero = document.querySelector('.phero, .hero')
+      function navState() {
+        const trigger = hero ? hero.offsetHeight - 80 : 40
+        const solid = window.scrollY > trigger
+        nav.classList.toggle('scrolled', solid)
+        nav.classList.toggle('hero-mode', !solid)
+      }
+      navState()
+      window.addEventListener('scroll', navState, { passive: true })
+      window.addEventListener('resize', navState)
+    })();
+  </script>
 </body>
+
 </html>
