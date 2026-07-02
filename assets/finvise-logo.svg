@@ -1,0 +1,9 @@
+<svg width="320" height="96" viewBox="0 0 320 96" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>Finvise</title>
+<desc>Finvise logo: an F in an outlined circle paired with the Finvise wordmark and tagline.</desc>
+<circle cx="48" cy="48" r="34" fill="none" stroke="#0a1059" stroke-width="1.6"/>
+<text x="48" y="62" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-weight="400" font-size="40" fill="#0a1059">F</text>
+<text x="98" y="44" font-family="Georgia,'Times New Roman',serif" font-weight="400" font-size="31" letter-spacing="1.5" fill="#0a1059">FINVISE</text>
+<line x1="99" y1="56" x2="276" y2="56" stroke="#0a1059" stroke-opacity="0.25" stroke-width="0.6"/>
+<text x="99" y="70" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="400" font-size="7.5" letter-spacing="2.4" fill="#6e6e76">THE NEW GENERATION VALUATION FIRM</text>
+</svg>

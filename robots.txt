@@ -1,0 +1,8 @@
+# robots.txt — FINVISE
+User-agent: *
+Allow: /
+
+# Block utility / non-indexable paths (adjust to your stack)
+Disallow: /assets/
+
+Sitemap: https://www.finvise.co.uk/sitemap.xml
