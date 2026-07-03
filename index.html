@@ -1497,6 +1497,275 @@
       white-space: nowrap
     }
 
+    /* ===== COVER EXPLAIN (£1M cover) ===== */
+    .cover-explain {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 36px 38px 38px;
+    }
+
+    .ce-tag {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .5px;
+      color: var(--indigo);
+      background: var(--indigo-wash);
+      border-radius: 999px;
+      padding: 6px 14px;
+      margin-bottom: 26px
+    }
+
+    .ce-flow {
+      display: flex;
+      align-items: stretch;
+      gap: 14px
+    }
+
+    .ce-chip {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      background: var(--fog);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 20px 22px;
+      transition: all .4s cubic-bezier(.16, 1, .3, 1)
+    }
+
+    .ce-chip:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 40px rgba(10, 16, 89, .07);
+      border-color: var(--line-2)
+    }
+
+    .ce-chip .cl {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .4px;
+      text-transform: uppercase;
+      color: var(--ink-4);
+      margin-bottom: 10px
+    }
+
+    .ce-chip .cv {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-size: clamp(28px, 2.6vw, 36px);
+      letter-spacing: -.02em;
+      line-height: 1;
+      color: var(--ink);
+      margin-bottom: 10px
+    }
+
+    .ce-chip .cn {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--ink-3);
+      line-height: 1.55
+    }
+
+    .ce-chip.hot {
+      background: var(--indigo-wash);
+      border-color: rgba(10, 16, 89, .18)
+    }
+
+    .ce-chip.hot .cl,
+    .ce-chip.hot .cv {
+      color: var(--indigo)
+    }
+
+    .ce-arrow {
+      align-self: center;
+      color: var(--ink-4);
+      font-size: 20px;
+      flex-shrink: 0
+    }
+
+    .ce-meter {
+      margin-top: 34px;
+      padding-top: 30px;
+      border-top: 1px solid var(--line)
+    }
+
+    .ce-meter-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 16px
+    }
+
+    .ce-meter-head .mh {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink)
+    }
+
+    .ce-ok {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--indigo)
+    }
+
+    .cov-track {
+      display: flex;
+      height: 40px;
+      background: var(--fog-2);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      overflow: hidden
+    }
+
+    .cov-fill {
+      width: 80%;
+      display: flex;
+      align-items: center;
+      padding: 0 18px;
+      background: var(--indigo);
+      border-radius: 999px;
+      min-width: 0
+    }
+
+    .cov-fill span {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .3px;
+      color: #fff;
+      white-space: nowrap
+    }
+
+    .cov-head {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+      color: var(--ink-4)
+    }
+
+    .cov-scale {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+      font-size: 12px;
+      color: var(--ink-4)
+    }
+
+    .ce-myth {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 20px
+    }
+
+    .mrow {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 20px 22px;
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--ink-2);
+      line-height: 1.6
+    }
+
+    .mrow b {
+      font-weight: 600;
+      color: var(--ink)
+    }
+
+    .mrow .ic {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      flex-shrink: 0;
+      margin-top: 1px
+    }
+
+    .mrow.no .ic {
+      background: var(--fog-2);
+      color: var(--ink-3)
+    }
+
+    .mrow.yes .ic {
+      background: var(--indigo);
+      color: #fff
+    }
+
+    @media(max-width:980px) {
+      .cover-explain {
+        padding: 30px 26px 32px
+      }
+
+      .ce-chip {
+        padding: 18px
+      }
+    }
+
+    @media(max-width:720px) {
+      .ce-flow {
+        flex-direction: column;
+        gap: 10px
+      }
+
+      .ce-arrow {
+        transform: rotate(90deg);
+        font-size: 18px
+      }
+
+      .ce-myth {
+        grid-template-columns: 1fr
+      }
+
+      .cov-track {
+        height: 36px
+      }
+
+      .cov-fill {
+        padding: 0 14px
+      }
+
+      .cov-fill span {
+        font-size: 11px
+      }
+    }
+
+    @media(max-width:460px) {
+      .cover-explain {
+        padding: 24px 18px 26px;
+        border-radius: 16px
+      }
+
+      .ce-chip .cv {
+        font-size: 26px
+      }
+
+      .cov-head {
+        display: none
+      }
+
+      .cov-fill {
+        flex: 1
+      }
+
+      .mrow {
+        padding: 16px 18px
+      }
+    }
+
     @media(max-width:980px) {
       .race-wrap {
         grid-template-columns: 1fr;
@@ -2143,6 +2412,55 @@ l-75 22 -1815 1 c-998 1 -1831 -1 -1850 -3z m3834 -1030 c-81 -159 -152 -293
             report — fast.</p>
           <span class="sa">→</span>
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- COVER EXPLAINED -->
+  <section class="sec sec-fog" id="cover">
+    <div class="wrap">
+      <div class="kick rv">Your protection, explained</div>
+      <h2 class="rv d1"
+        style="font-family:var(--serif);font-weight:300;font-size:clamp(28px,3.6vw,46px);letter-spacing:-.02em;color:var(--ink);max-width:20ch;margin-bottom:20px">
+        £1M cover — <em>not a £1M limit</em></h2>
+      <p class="rv d1"
+        style="font-size:17px;font-weight:300;color:var(--ink-3);line-height:1.7;max-width:66ch;margin-bottom:44px">A
+        common misconception is that we can only value properties worth up to £1M. Not so — we value property of
+        <strong style="color:var(--ink);font-weight:500">any</strong> value. The £1M is our professional indemnity
+        cover: it protects you against the financial impact of a valuation error, per claim — and that exposure is only
+        ever the difference in value, never the whole property.
+      </p>
+
+      <div class="cover-explain rv d1">
+        <div class="ce-tag">Worked example</div>
+        <div class="ce-flow">
+          <div class="ce-chip"><span class="cl">Property value</span><span class="cv">£5.0M</span><span class="cn">Any
+              value — no cap on what we assess</span></div>
+          <span class="ce-arrow">&rarr;</span>
+          <div class="ce-chip"><span class="cl">Transaction value</span><span class="cv">£4.2M</span><span
+              class="cn">What the property actually transacted at</span></div>
+          <span class="ce-arrow">&rarr;</span>
+          <div class="ce-chip hot"><span class="cl">Difference at risk</span><span class="cv">£0.8M</span><span
+              class="cn">The only exposure if challenged</span></div>
+        </div>
+        <div class="ce-meter">
+          <div class="ce-meter-head"><span class="mh">What our £1M cover protects</span><span class="ce-ok">&#10003;
+              Covered &mdash; £0.2M headroom</span></div>
+          <div class="cov-track">
+            <div class="cov-fill"><span>£0.8M claim</span></div>
+            <div class="cov-head">headroom</div>
+          </div>
+          <div class="cov-scale"><span>£0</span><span>£1M insured cover per claim</span></div>
+        </div>
+      </div>
+
+      <div class="ce-myth rv d2">
+        <div class="mrow no"><span class="ic">&#10007;</span>
+          <div><b>Not</b> a limit on the property value we can assess. We value assets of any size.</div>
+        </div>
+        <div class="mrow yes"><span class="ic">&#10003;</span>
+          <div>The cover that protects you against a valuation error, <b>per claim</b>.</div>
+        </div>
       </div>
     </div>
   </section>
