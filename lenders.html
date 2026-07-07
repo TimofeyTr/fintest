@@ -2916,7 +2916,55 @@
         volume.</p>
     </div>
   </section>
-
+  <section class="testi">
+    <div class="wrap">
+      <div class="kick rv">Client stories</div>
+      <h2 class="rv d1">What it looks like <em>in practice</em></h2>
+      <div class="tcar" id="tcar">
+        <div class="tslide on">
+          <blockquote>Our pilot programme with Finvise has helped us to provide an enhanced service to our home finance
+            customers by reducing average turnaround times during the valuation process by up to 600% across the trial
+            as a whole, without compromising on report quality or customer experience.</blockquote>
+          <div class="by">
+            <div class="av">TB</div>
+            <div>
+              <div class="nm">Tracey Bailey</div>
+              <div class="rl">Chief Operating Officer, Gatehouse Bank</div>
+            </div>
+          </div>
+        </div>
+        <div class="tslide">
+          <blockquote>Finvise has become an <em>integral part</em> of our valuation process — exceptional service,
+            efficiency, and reliability across our cases.</blockquote>
+          <div class="by">
+            <div class="av">HC</div>
+            <div>
+              <div class="nm">Hope Capital</div>
+              <div class="rl">Specialist bridging lender</div>
+            </div>
+          </div>
+        </div>
+        <div class="tslide">
+          <blockquote>The speed and consistency have <em>transformed</em> how quickly we can move on home finance cases.
+          </blockquote>
+          <div class="by">
+            <div class="av">BC</div>
+            <div>
+              <div class="nm">Bluecroft</div>
+              <div class="rl">Lending partner</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tctl">
+        <div class="tdots" id="tdots"></div>
+        <div class="tnav">
+          <button class="tbtn" id="tprev">←</button>
+          <button class="tbtn" id="tnext">→</button>
+        </div>
+      </div>
+    </div>
+  </section>
   <section class="fcta">
     <div class="wrap">
       <h2 class="rv">Ready to accelerate your pipeline?</h2>
@@ -3041,7 +3089,22 @@
       navState()
       window.addEventListener('scroll', navState, { passive: true })
       window.addEventListener('resize', navState)
-    })();
+    })()
+    const slides = [...document.querySelectorAll('.tslide')]
+    const dotsWrap = document.getElementById('tdots')
+    let idx = 0, timer
+    slides.forEach((_, i) => { const b = document.createElement('button'); b.className = 'tdot' + (i === 0 ? ' on' : ''); b.onclick = () => go(i); dotsWrap.appendChild(b) })
+    const dots = [...dotsWrap.children]
+    function go(n) {
+      slides[idx].classList.remove('on'); dots[idx].classList.remove('on')
+      idx = (n + slides.length) % slides.length
+      slides[idx].classList.add('on'); dots[idx].classList.add('on')
+      restart()
+    }
+    function restart() { if (reduce) return; clearInterval(timer); timer = setInterval(() => go(idx + 1), 5500) }
+    document.getElementById('tnext').onclick = () => go(idx + 1)
+    document.getElementById('tprev').onclick = () => go(idx - 1)
+    restart()
   </script>
 </body>
 
