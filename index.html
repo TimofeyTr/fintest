@@ -253,6 +253,104 @@
       border-color: rgba(255, 255, 255, .7)
     }
 
+    /* ===== NAV DROPDOWN (Solutions) ===== */
+    .nav-dd {
+      position: relative
+    }
+
+    .nav-dd-btn {
+      font-family: var(--sans);
+      font-size: 14px;
+      color: var(--ink-2);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 8px 14px 8px 16px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all .25s
+    }
+
+    .nav-dd-btn .ch {
+      width: 7px;
+      height: 7px;
+      border-right: 1.5px solid currentColor;
+      border-bottom: 1.5px solid currentColor;
+      transform: rotate(45deg);
+      margin-top: -4px;
+      transition: transform .25s
+    }
+
+    .nav-dd-btn:hover,
+    .nav-dd.open .nav-dd-btn {
+      background: var(--fog)
+    }
+
+    nav.hero-mode .nav-dd-btn {
+      color: rgba(255, 255, 255, .85)
+    }
+
+    nav.hero-mode .nav-dd-btn:hover,
+    nav.hero-mode .nav-dd.open .nav-dd-btn {
+      background: rgba(255, 255, 255, .12)
+    }
+
+    .nav-dd.open .nav-dd-btn .ch {
+      transform: rotate(225deg);
+      margin-top: 2px
+    }
+
+    .nav-dd::after {
+      /* hover bridge between button and menu */
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 100%;
+      height: 14px
+    }
+
+    .nav-dd-menu {
+      position: absolute;
+      top: calc(100% + 10px);
+      left: 0;
+      min-width: 216px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 8px;
+      box-shadow: 0 24px 50px rgba(10, 16, 89, .12);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(8px);
+      transition: opacity .3s cubic-bezier(.16, 1, .3, 1), transform .3s cubic-bezier(.16, 1, .3, 1), visibility .3s;
+      z-index: 210
+    }
+
+    .nav-dd:hover .nav-dd-menu,
+    .nav-dd.open .nav-dd-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: none
+    }
+
+    .nav-r .nav-dd-menu a,
+    nav.hero-mode .nav-r .nav-dd-menu a {
+      display: block;
+      padding: 11px 14px;
+      border-radius: 9px;
+      font-size: 14px;
+      color: var(--ink-2)
+    }
+
+    .nav-r .nav-dd-menu a:hover,
+    nav.hero-mode .nav-r .nav-dd-menu a:hover {
+      background: var(--fog);
+      color: var(--indigo)
+    }
+
     /* ===== HERO ===== */
     .hero {
       position: relative;
@@ -347,6 +445,41 @@
       opacity: 0;
       animation: fu .9s ease 1.05s forwards;
       flex-wrap: wrap
+    }
+
+    .hero-trust {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      margin-top: 52px;
+      opacity: 0;
+      animation: fu .9s ease 1.2s forwards
+    }
+
+    .hero-trust img {
+      display: block;
+      width: auto;
+      filter: brightness(0) invert(1);
+      opacity: .8;
+      transition: opacity .3s
+    }
+
+    .hero-trust img:hover {
+      opacity: 1
+    }
+
+    .hero-trust .ht-rics {
+      height: 38px
+    }
+
+    .hero-trust .ht-tech {
+      height: 46px
+    }
+
+    .ht-sep {
+      width: 1px;
+      height: 36px;
+      background: rgba(255, 255, 255, .28)
     }
 
     @keyframes heroWord {
@@ -742,6 +875,108 @@
       color: var(--ink-2);
       line-height: 1.65;
       max-width: 52ch
+    }
+
+    /* ===== INFO TOOLTIP ===== */
+    .info {
+      position: relative;
+      display: inline-block;
+      margin-left: 6px;
+      vertical-align: middle
+    }
+
+    .info-btn {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 1px solid var(--line-2);
+      background: transparent;
+      color: var(--ink-3);
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      transform: translateY(-2px);
+      transition: all .2s;
+      -webkit-tap-highlight-color: transparent
+    }
+
+    .info-btn:hover,
+    .info.open .info-btn,
+    .info-btn:focus-visible {
+      background: var(--indigo);
+      border-color: var(--indigo);
+      color: #fff;
+      outline: none
+    }
+
+    .info-pop {
+      position: absolute;
+      bottom: calc(100% + 12px);
+      left: 50%;
+      transform: translateX(-50%) translateY(4px);
+      width: max-content;
+      max-width: 320px;
+      background: var(--ink);
+      color: #fff;
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 1.55;
+      padding: 12px 14px;
+      border-radius: 10px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, .15);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .25s cubic-bezier(.16, 1, .3, 1), transform .25s cubic-bezier(.16, 1, .3, 1), visibility .25s;
+      z-index: 100;
+      pointer-events: none
+    }
+
+    .info-pop::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 6px solid transparent;
+      border-top-color: var(--ink)
+    }
+
+    .info:hover .info-pop,
+    .info.open .info-pop {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0)
+    }
+
+    @media(max-width:720px) {
+      .info-pop {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        transform: translate(-50%, -50%) scale(.96);
+        width: max-content;
+        max-width: min(320px, calc(100vw - 40px));
+        font-size: 13px;
+        padding: 14px 16px
+      }
+
+      .info-pop::after {
+        display: none
+      }
+
+      .info:hover .info-pop,
+      .info.open .info-pop {
+        transform: translate(-50%, -50%) scale(1)
+      }
     }
 
     /* ===== FEATURE CARDS (Crosby-style mosaic) ===== */
@@ -1897,6 +2132,7 @@
       .hero .eyebrow,
       .hero .sub,
       .hero-cta,
+      .hero-trust,
       .scroll-hint {
         opacity: 1;
         transform: none
@@ -2048,6 +2284,99 @@
       border-color: var(--indigo)
     }
 
+    /* mobile Solutions accordion */
+    .mm-group-btn {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--line);
+      cursor: pointer;
+      font-family: var(--serif);
+      font-weight: 300;
+      font-size: 30px;
+      letter-spacing: -.01em;
+      color: var(--ink);
+      text-align: left;
+      padding: 18px 0;
+      transition: color .2s
+    }
+
+    .mm-group-btn .ch {
+      width: 9px;
+      height: 9px;
+      border-right: 1.5px solid currentColor;
+      border-bottom: 1.5px solid currentColor;
+      transform: rotate(45deg);
+      margin-right: 6px;
+      transition: transform .25s;
+      flex-shrink: 0
+    }
+
+    .mm-group.open .mm-group-btn {
+      color: var(--indigo)
+    }
+
+    .mm-group.open .mm-group-btn .ch {
+      transform: rotate(225deg)
+    }
+
+    .mm-sub {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .4s cubic-bezier(.16, 1, .3, 1)
+    }
+
+    .mm-group.open .mm-sub {
+      max-height: 420px
+    }
+
+    .mobile-menu .mm-sub a {
+      display: block;
+      font-family: var(--serif);
+      font-weight: 300;
+      font-size: 30px;
+      letter-spacing: -.01em;
+      color: var(--ink);
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line)
+    }
+
+    @media(max-width:720px) {
+      .hero-trust {
+        gap: 20px;
+        margin-top: 40px
+      }
+
+      .hero-trust .ht-rics {
+        height: 32px
+      }
+
+      .hero-trust .ht-tech {
+        height: 40px
+      }
+
+      .ht-sep {
+        height: 30px
+      }
+    }
+
+    @media(max-width:460px) {
+      .hero-trust {
+        gap: 16px
+      }
+
+      .hero-trust .ht-rics {
+        height: 28px
+      }
+
+      .hero-trust .ht-tech {
+        height: 36px
+      }
+    }
+
     :focus-visible {
       outline: 2px solid var(--indigo);
       outline-offset: 2px
@@ -2137,8 +2466,18 @@ l-75 22 -1815 1 c-998 1 -1831 -1 -1850 -3z m3834 -1030 c-81 -159 -152 -293
         </svg><span class="brand-word">FINVISE</span>
       </a>
       <div class="nav-r">
-        <a href="#services">Services</a>
-        <a href="about.html">About us</a>
+        <div class="nav-dd" id="navDd">
+          <a href="about.html">About us</a>
+          <button class="nav-dd-btn" type="button" aria-haspopup="true" aria-expanded="false"
+            aria-controls="navDdMenu">Solutions<span class="ch" aria-hidden="true"></span></button>
+          <div class="nav-dd-menu" id="navDdMenu">
+            <a href="lenders.html">For lenders</a>
+            <a href="insurers.html">For insurers</a>
+            <a href="public-bodies.html">For public bodies</a>
+            <a href="for-you.html">For you</a>
+          </div>
+        </div>
+
         <a href="cases.html">Cases</a>
         <a href="contact.html">Contact</a>
         <a target="_blank" rel="noopener noreferrer" href="https://app.finvise.com/login" class="login">Login</a>
@@ -2154,13 +2493,23 @@ l-75 22 -1815 1 c-998 1 -1831 -1 -1850 -3z m3834 -1030 c-81 -159 -152 -293
   <!-- MOBILE MENU (added) -->
   <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
     <nav class="mm-links" aria-label="Mobile navigation">
-      <a href="#services">Services</a>
       <a href="about.html">About us</a>
+      <div class="mm-group" id="mmGroup">
+        <button class="mm-group-btn" type="button" aria-expanded="false" aria-controls="mmSub">Solutions<span class="ch"
+            aria-hidden="true"></span></button>
+        <div class="mm-sub" id="mmSub">
+          <a href="lenders.html">For lenders</a>
+          <a href="insurers.html">For insurers</a>
+          <a href="public-bodies.html">For public bodies</a>
+          <a href="for-you.html">For you</a>
+        </div>
+      </div>
+
       <a href="cases.html">Cases</a>
       <a href="contact.html">Contact</a>
     </nav>
     <div class="mm-actions">
-      <a target="_blank" rel="noopener noreferrer" href="https://app.finvise.com/login" class="login">Login</a>
+      <a href="#" class="login">Login</a>
       <a href="contact.html" class="start">Get started</a>
     </div>
   </div>
@@ -2188,6 +2537,13 @@ l-75 22 -1815 1 c-998 1 -1831 -1 -1850 -3z m3834 -1030 c-81 -159 -152 -293
           </a>
           <a href="#process" class="btn btn-ghost">See how it works</a>
         </div>
+        <div class="hero-trust">
+          <img src="./assets/regulated_by.png" alt="Regulated by RICS" class="ht-rics" width="491" height="201"
+            loading="eager" decoding="async">
+          <span class="ht-sep" aria-hidden="true"></span>
+          <img style='filter:none' src="./assets/tech_partner.png" alt="Technology partner — PriceHubble"
+            class="ht-tech" width="512" height="279" loading="eager" decoding="async">
+        </div>
       </div>
     </div>
     <div class="scroll-hint"><span>Scroll</span><span class="ln"></span></div>
@@ -2202,17 +2558,17 @@ l-75 22 -1815 1 c-998 1 -1831 -1 -1850 -3z m3834 -1030 c-81 -159 -152 -293
           <div class="lg">
             <span>Gatehouse Bank</span>
             <span>Hope Capital</span>
-            <span>Bluecroft</span>
-            <span>Selina</span>
-            <span>B&amp;W Bridging</span>
+            <span>Bluecroft Finance</span>
+            <span>Selina Finance</span>
+
             <span>SellTogether</span>
           </div>
           <div class="lg" aria-hidden="true">
             <span>Gatehouse Bank</span>
             <span>Hope Capital</span>
-            <span>Bluecroft</span>
-            <span>Selina</span>
-            <span>B&amp;W Bridging</span>
+            <span>Bluecroft Finance</span>
+            <span>Selina Finance</span>
+
             <span>SellTogether</span>
           </div>
         </div>
@@ -2245,7 +2601,7 @@ l-75 22 -1815 1 c-998 1 -1831 -1 -1850 -3z m3834 -1030 c-81 -159 -152 -293
       </div>
       <div class="statcell rv d4">
         <div class="sv">ISO</div>
-        <div class="sl">Certified<br>27001 &amp; 42001</div>
+        <div class="sl">Registered<br>27001 &amp; 42001</div>
       </div>
     </div>
   </section>
@@ -2344,7 +2700,11 @@ l-75 22 -1815 1 c-998 1 -1831 -1 -1850 -3z m3834 -1030 c-81 -159 -152 -293
           <div class="princ-l"><span class="pk">RICS-qualified valuers</span></div>
           <div class="princ-r">
             <p>Every report is signed by a regulated professional with full indemnity insurance. The accountability of
-              an established firm, with none of the lag.</p>
+              an established firm, with none of the lag.<span class="info"><button type="button" class="info-btn"
+                  aria-label="More information" aria-expanded="false">?</button><span class="info-pop"
+                  role="tooltip">*in
+                  95% of cases where it returns a value. Tested from more than 3,000 properties valued by a
+                  RICS-regulated human valuer. Value was returned in 92% of cases.</span></span></p>
           </div>
         </div>
         <div class="princ rv d1">
@@ -2364,7 +2724,8 @@ l-75 22 -1815 1 c-998 1 -1831 -1 -1850 -3z m3834 -1030 c-81 -159 -152 -293
         <div class="princ rv d3">
           <div class="princ-l"><span class="pk">Secure & certified</span></div>
           <div class="princ-r">
-            <p>ISO 27001 and ISO 42001 certified, with £1M insurance cover on every report. Your data and your decisions
+            <p>ISO 27001 and ISO 42001 certified, with £1M insurance cover on every RICS report. Your data and your
+              decisions
               are protected to the highest standard.</p>
           </div>
         </div>
@@ -2426,7 +2787,7 @@ l-75 22 -1815 1 c-998 1 -1831 -1 -1850 -3z m3834 -1030 c-81 -159 -152 -293
       <p class="rv d1"
         style="font-size:17px;font-weight:300;color:var(--ink-3);line-height:1.7;max-width:66ch;margin-bottom:44px">A
         common misconception is that we can only value properties worth up to £1M. Not so — we value property of
-        <strong style="color:var(--ink);font-weight:500">any</strong> value. The £1M is our professional indemnity
+        any value. The £1M is our professional indemnity
         cover: it protects you against the financial impact of a valuation error, per claim — and that exposure is only
         ever the difference in value, never the whole property.
       </p>
@@ -2541,7 +2902,7 @@ l-75 22 -1815 1 c-998 1 -1831 -1 -1850 -3z m3834 -1030 c-81 -159 -152 -293
   <section class="fcta">
     <div class="wrap">
       <h2 class="rv">Don't let valuations <em>hold the deal.</em></h2>
-      <p class="rv d1">Book a 30-minute call and see how fast a Red Book report can really be.</p>
+      <p class="rv d1">Book a 15-minute call and see how fast a Red Book report can really be.</p>
       <div class="rv d2"><a
           href="https://outlook.office.com/book/FINVISEMeetingHub@finvise.com/s/BhD4l-hmk0Kio8RT5LA6Bg2?ismsaljsauthenabled"
           target="_blank" rel="noopener noreferrer" class="btn btn-w"
@@ -2628,6 +2989,74 @@ l-75 22 -1815 1 c-998 1 -1831 -1 -1850 -3z m3834 -1030 c-81 -159 -152 -293
       burger.addEventListener('click', () => setOpen(!document.body.classList.contains('menu-open')))
       menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setOpen(false)))
       document.addEventListener('keydown', e => { if (e.key === 'Escape') setOpen(false) })
+    })();
+
+    // Solutions dropdown (added)
+    (function () {
+      const dd = document.getElementById('navDd')
+      if (!dd) return
+      const btn = dd.querySelector('.nav-dd-btn')
+      function setDd(open) {
+        dd.classList.toggle('open', open)
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false')
+      }
+      btn.addEventListener('click', e => { e.stopPropagation(); setDd(!dd.classList.contains('open')) })
+      document.addEventListener('click', e => { if (!dd.contains(e.target)) setDd(false) })
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') setDd(false) })
+      dd.querySelectorAll('.nav-dd-menu a').forEach(a => a.addEventListener('click', () => setDd(false)))
+    })();
+
+    // Mobile Solutions accordion (added)
+    (function () {
+      const group = document.getElementById('mmGroup')
+      if (!group) return
+      const btn = group.querySelector('.mm-group-btn')
+      btn.addEventListener('click', () => {
+        const open = !group.classList.contains('open')
+        group.classList.toggle('open', open)
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false')
+      })
+    })();
+
+    // Info tooltips (added)
+    (function () {
+      const infos = document.querySelectorAll('.info')
+      if (!infos.length) return
+      infos.forEach(el => {
+        const btn = el.querySelector('.info-btn')
+        if (!btn) return
+        btn.addEventListener('click', e => {
+          e.stopPropagation()
+          const open = !el.classList.contains('open')
+          document.querySelectorAll('.info.open').forEach(o => {
+            o.classList.remove('open')
+            const b = o.querySelector('.info-btn')
+            if (b) b.setAttribute('aria-expanded', 'false')
+          })
+          if (open) {
+            el.classList.add('open')
+            btn.setAttribute('aria-expanded', 'true')
+          }
+        })
+      })
+      document.addEventListener('click', e => {
+        document.querySelectorAll('.info.open').forEach(o => {
+          if (!o.contains(e.target)) {
+            o.classList.remove('open')
+            const b = o.querySelector('.info-btn')
+            if (b) b.setAttribute('aria-expanded', 'false')
+          }
+        })
+      })
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') {
+          document.querySelectorAll('.info.open').forEach(o => {
+            o.classList.remove('open')
+            const b = o.querySelector('.info-btn')
+            if (b) b.setAttribute('aria-expanded', 'false')
+          })
+        }
+      })
     })()
 
     const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches

@@ -356,6 +356,104 @@
       flex-wrap: wrap
     }
 
+    /* ===== NAV DROPDOWN (Solutions) ===== */
+    .nav-dd {
+      position: relative
+    }
+
+    .nav-dd-btn {
+      font-family: var(--sans);
+      font-size: 14px;
+      color: var(--ink-2);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 8px 14px 8px 16px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all .25s
+    }
+
+    .nav-dd-btn .ch {
+      width: 7px;
+      height: 7px;
+      border-right: 1.5px solid currentColor;
+      border-bottom: 1.5px solid currentColor;
+      transform: rotate(45deg);
+      margin-top: -4px;
+      transition: transform .25s
+    }
+
+    .nav-dd-btn:hover,
+    .nav-dd.open .nav-dd-btn {
+      background: var(--fog)
+    }
+
+    nav.hero-mode .nav-dd-btn {
+      color: rgba(255, 255, 255, .85)
+    }
+
+    nav.hero-mode .nav-dd-btn:hover,
+    nav.hero-mode .nav-dd.open .nav-dd-btn {
+      background: rgba(255, 255, 255, .12)
+    }
+
+    .nav-dd.open .nav-dd-btn .ch {
+      transform: rotate(225deg);
+      margin-top: 2px
+    }
+
+    .nav-dd::after {
+      /* hover bridge between button and menu */
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 100%;
+      height: 14px
+    }
+
+    .nav-dd-menu {
+      position: absolute;
+      top: calc(100% + 10px);
+      left: 0;
+      min-width: 216px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 8px;
+      box-shadow: 0 24px 50px rgba(10, 16, 89, .12);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(8px);
+      transition: opacity .3s cubic-bezier(.16, 1, .3, 1), transform .3s cubic-bezier(.16, 1, .3, 1), visibility .3s;
+      z-index: 210
+    }
+
+    .nav-dd:hover .nav-dd-menu,
+    .nav-dd.open .nav-dd-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: none
+    }
+
+    .nav-r .nav-dd-menu a,
+    nav.hero-mode .nav-r .nav-dd-menu a {
+      display: block;
+      padding: 11px 14px;
+      border-radius: 9px;
+      font-size: 14px;
+      color: var(--ink-2)
+    }
+
+    .nav-r .nav-dd-menu a:hover,
+    nav.hero-mode .nav-r .nav-dd-menu a:hover {
+      background: var(--fog);
+      color: var(--indigo)
+    }
+
     @keyframes heroWord {
       to {
         opacity: 1;
@@ -2462,6 +2560,66 @@
       }
     }
 
+    /* mobile Solutions accordion */
+    .mm-group-btn {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--line);
+      cursor: pointer;
+      font-family: var(--serif);
+      font-weight: 300;
+      font-size: 30px;
+      letter-spacing: -.01em;
+      color: var(--ink);
+      text-align: left;
+      padding: 18px 0;
+      transition: color .2s
+    }
+
+    .mm-group-btn .ch {
+      width: 9px;
+      height: 9px;
+      border-right: 1.5px solid currentColor;
+      border-bottom: 1.5px solid currentColor;
+      transform: rotate(45deg);
+      margin-right: 6px;
+      transition: transform .25s;
+      flex-shrink: 0
+    }
+
+    .mm-group.open .mm-group-btn {
+      color: var(--indigo)
+    }
+
+    .mm-group.open .mm-group-btn .ch {
+      transform: rotate(225deg)
+    }
+
+    .mm-sub {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .4s cubic-bezier(.16, 1, .3, 1)
+    }
+
+    .mm-group.open .mm-sub {
+      max-height: 420px
+    }
+
+    .mobile-menu .mm-sub a {
+      display: block;
+      font-family: var(--serif);
+      font-weight: 300;
+      font-size: 30px;
+      letter-spacing: -.01em;
+      color: var(--ink);
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line)
+    }
+
     /* ===== FOOTER RESPONSIVE FIX (added) ===== */
     @media(max-width:720px) {
       .foot-grid {
@@ -2499,11 +2657,20 @@
         </svg><span class="brand-word">FINVISE</span>
       </a>
       <div class="nav-r">
-        <a href="cases.html">Cases</a>
         <a href="about.html">About us</a>
+        <div class="nav-dd" id="navDd">
+          <button class="nav-dd-btn" type="button" aria-haspopup="true" aria-expanded="false"
+            aria-controls="navDdMenu">Solutions<span class="ch" aria-hidden="true"></span></button>
+          <div class="nav-dd-menu" id="navDdMenu">
+            <a href="lenders.html">For lenders</a>
+            <a href="insurers.html">For insurers</a>
+            <a href="public-bodies.html">For public bodies</a>
+            <a href="for-you.html">For you</a>
+          </div>
+        </div>
+        <a href="cases.html">Cases</a>
         <a href="contact.html">Contact</a>
         <a target="_blank" rel="noopener noreferrer" href="https://app.finvise.com/login" class="login">Login</a>
-
         <a href="contact.html" class="start">Get started</a>
       </div>
       <button class="nav-burger" id="navBurger" type="button" aria-label="Open menu" aria-expanded="false"
@@ -2516,8 +2683,18 @@
   <!-- MOBILE MENU (added) -->
   <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
     <nav class="mm-links" aria-label="Mobile navigation">
-      <a href="cases.html">Cases</a>
       <a href="about.html">About us</a>
+      <div class="mm-group" id="mmGroup">
+        <button class="mm-group-btn" type="button" aria-expanded="false" aria-controls="mmSub">Solutions<span class="ch"
+            aria-hidden="true"></span></button>
+        <div class="mm-sub" id="mmSub">
+          <a href="lenders.html">For lenders</a>
+          <a href="insurers.html">For insurers</a>
+          <a href="public-bodies.html">For public bodies</a>
+          <a href="for-you.html">For you</a>
+        </div>
+      </div>
+      <a href="cases.html">Cases</a>
       <a href="contact.html">Contact</a>
     </nav>
     <div class="mm-actions">
@@ -2545,13 +2722,14 @@
       <div class="qgrid">
         <div class="qcard rv">
           <div class="qm">Gatehouse Bank · Lending</div>
-          <blockquote>Our pilot programme reduced average turnaround times significantly — without compromising on
-            report quality or customer experience.</blockquote>
+          <blockquote>Our pilot programme with Finvise has helped us to provide an enhanced service to our home finance
+            customers by reducing average turnaround times during the valuation process by up to 600% across the trial
+            as a whole, without compromising on report quality or customer experience.</blockquote>
           <div class="by">
             <div class="av">TB</div>
             <div>
-              <div class="nm">Tracey Bailey</div>
-              <div class="rl">Chief Operating Officer</div>
+              <div class="nm">Gatehouse Bank</div>
+              <div class="rl">Chief Operating Officer,Tracey Bailey</div>
             </div>
           </div>
         </div>
@@ -2580,19 +2758,19 @@
         style="font-family:var(--serif);font-weight:300;font-size:clamp(28px,3.6vw,46px);letter-spacing:-.02em;color:var(--ink);margin-bottom:48px">
         Meet us <em>in person</em></h2>
       <div class="jgrid">
-        <div class="jcard rv" style="cursor:default">
+        <div class="jcard rv" style="pointer-events: none">
           <div class="meta">Roundtables</div>
           <h3>For lenders</h3>
           <p>Intimate breakfast briefings for heads of lending and underwriting. Turnaround benchmarks, compliance
             updates, and live demos.</p>
         </div>
-        <div class="jcard rv d1" style="cursor:default">
+        <div class="jcard rv d1" style="pointer-events: none" style="pointer-events: none">
           <div class="meta">Webinars</div>
           <h3>Valuation insights</h3>
           <p>Online sessions on market trends, underinsurance risk, and how new generation practices are reshaping the
             industry.</p>
         </div>
-        <div class="jcard rv d2" style="cursor:default">
+        <div class="jcard rv d2" style="pointer-events: none">
           <div class="meta">Conferences</div>
           <h3>Industry events</h3>
           <p>Find us at Insurtech, RICS conferences, and lending industry forums throughout the year.</p>
@@ -2615,12 +2793,12 @@
           <p>There's a firm I know of (good people, capable surveyors) that still prints out draft reports to proofread
             them. On paper. With a pen.</p>
         </a>
-        <a href="#" class="jcard rv d1">
+        <a href="#" style="pointer-events: none" class="jcard rv d1">
           <div class="meta">Market update · May 2026</div>
           <h3>Valuation turnaround benchmarks, Q1 2026</h3>
           <p>How long are RICS desktop valuations really taking? Our data from 1,000+ reports.</p>
         </a>
-        <a href="#" class="jcard rv d2">
+        <a href="#" class="jcard rv d2" style="pointer-events: none">
           <div class="meta">Guide · April 2026</div>
           <h3>Subscription vs pay-per-report: which fits your operation?</h3>
           <p>A practical comparison for mid-size lenders evaluating valuation partners.</p>
@@ -2726,6 +2904,32 @@
       navState()
       window.addEventListener('scroll', navState, { passive: true })
       window.addEventListener('resize', navState)
+    })();
+    // Solutions dropdown (added)
+    (function () {
+      const dd = document.getElementById('navDd')
+      if (!dd) return
+      const btn = dd.querySelector('.nav-dd-btn')
+      function setDd(open) {
+        dd.classList.toggle('open', open)
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false')
+      }
+      btn.addEventListener('click', e => { e.stopPropagation(); setDd(!dd.classList.contains('open')) })
+      document.addEventListener('click', e => { if (!dd.contains(e.target)) setDd(false) })
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') setDd(false) })
+      dd.querySelectorAll('.nav-dd-menu a').forEach(a => a.addEventListener('click', () => setDd(false)))
+    })();
+
+    // Mobile Solutions accordion (added)
+    (function () {
+      const group = document.getElementById('mmGroup')
+      if (!group) return
+      const btn = group.querySelector('.mm-group-btn')
+      btn.addEventListener('click', () => {
+        const open = !group.classList.contains('open')
+        group.classList.toggle('open', open)
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false')
+      })
     })();
   </script>
 </body>
