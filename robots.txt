@@ -5,4 +5,4 @@ Allow: /
 # Block utility / non-indexable paths (adjust to your stack)
 Disallow: /assets/
 
-Sitemap: https://www.finvise.co.uk/sitemap.xml
+Sitemap: https://www.finvise.com/sitemap.xml
